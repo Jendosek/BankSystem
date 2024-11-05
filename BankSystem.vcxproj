@@ -19,10 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="account.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="account.h" />
+    <ClInclude Include="error.h" />
     <ClInclude Include="libs.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="user.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

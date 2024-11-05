@@ -7,15 +7,51 @@
     <Filter Include="libs.h">
       <UniqueIdentifier>{b6571e77-5409-42de-a7cf-2037244203af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{a51c0f48-1179-411f-8903-25ee57285fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\domain">
+      <UniqueIdentifier>{0e5c10e3-02a7-4e88-bac7-ab9dcf14d864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\error">
+      <UniqueIdentifier>{549fb32f-3168-40d6-a42e-4bb49ab17d8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\logger">
+      <UniqueIdentifier>{738bf167-7f70-4c98-9cc9-4a941b5e5724}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="account.cpp">
+      <Filter>core\domain</Filter>
+    </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>core\domain</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>core\error</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>core\logger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs.h">
       <Filter>libs.h</Filter>
+    </ClInclude>
+    <ClInclude Include="account.h">
+      <Filter>core\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="user.h">
+      <Filter>core\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>core\error</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>core\logger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
