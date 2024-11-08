@@ -20,17 +20,30 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="account.cpp" />
+    <ClCompile Include="account_repository.cpp" />
+    <ClCompile Include="account_service.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="transaction.cpp" />
+    <ClCompile Include="transaction_service.cpp" />
     <ClCompile Include="user.cpp" />
+    <ClCompile Include="user_repository.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
+    <ClInclude Include="account_repository.h" />
+    <ClInclude Include="account_service.h" />
     <ClInclude Include="error.h" />
+    <ClInclude Include="i_account_service.h" />
+    <ClInclude Include="i_repository.h" />
+    <ClInclude Include="i_transaction_service.h" />
     <ClInclude Include="libs.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="transaction.h" />
+    <ClInclude Include="transaction_service.h" />
     <ClInclude Include="user.h" />
+    <ClInclude Include="user_repository.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
