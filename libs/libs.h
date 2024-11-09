@@ -6,10 +6,12 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 namespace BankSystem {
     const double MIN_BALANCE = 0.0;
     const double MAX_WITHDRAW_LIMIT = 10000.0;
     const double INITIAL_DEPOSIT = 100.0;
 }
 
-#endif // LIBS_H
+#endif
