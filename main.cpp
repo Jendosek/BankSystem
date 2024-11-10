@@ -4,91 +4,104 @@ using namespace BankSystem;
 
 int main()
 {
-    std::string accountNumber;
+
+    
+
+    return 0;
+    
+}
+
+// ТЕСТ НА АКАУНТ
+/*string accountNumber;
     double initialBalance;
 
-    // Завантажуємо дані з файлу при запуску програми
-    Account account("", 0.0); // Тимчасовий об'єкт для завантаження даних
-    std::ifstream inFile("account_data.txt");
+    cout << "Welcome to the Bank System" << endl;
 
-    if (inFile.is_open()) {
-        account.loadData(inFile);
-        inFile.close();
-        std::cout << "Account loaded successfully.\n"
-            << "Account Number: " << account.getAccountNumber()
-            << "\nBalance: " << account.getBalance() << "\n\n";
-    }
-    else {
-        std::cout << "No previous account data found. Please create a new account.\n";
+    cout << "Enter account number: ";
+    cin >> accountNumber;
 
-        // Запитуємо у користувача дані для створення нового рахунку
-        std::cout << "Enter account number: ";
-        std::cin >> accountNumber;
-        std::cout << "Enter initial balance: ";
-        std::cin >> initialBalance;
+    cout << "Enter initial balance: ";
+    cin >> initialBalance;
 
-        account = Account(accountNumber, initialBalance);
-    }
+    Account account(accountNumber, initialBalance);
 
-    // Меню для користувача
-    int choice;
-    do {
-        std::cout << "\n--- Bank Account Menu ---\n";
-        std::cout << "1. Deposit\n";
-        std::cout << "2. Withdraw\n";
-        std::cout << "3. Show Balance\n";
-        std::cout << "4. Exit and Save\n";
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+    bool running = true;
+    while (running) {
+        cout << "\nChoose an action:" << endl;
+        cout << "1. Deposit" << endl;
+        cout << "2. Withdraw" << endl;
+        cout << "3. Show Balance" << endl;
+        cout << "4. Save Account Data" << endl;
+        cout << "5. Load Account Data" << endl;
+        cout << "6. Exit" << endl;
+        cout << "Your choice: ";
+
+        int choice;
+        cin >> choice;
 
         switch (choice) {
         case 1: {
             double amount;
-            std::cout << "Enter deposit amount: ";
-            std::cin >> amount;
+            cout << "Enter amount to deposit: ";
+            cin >> amount;
             try {
                 account.deposit(amount);
-                std::cout << "Deposit successful. New balance: " << account.getBalance() << "\n";
+                cout << "Deposited $" << amount << " successfully." << endl;
             }
             catch (const std::exception& e) {
-                std::cerr << "Error: " << e.what() << "\n";
+                cerr << "Error: " << e.what() << endl;
             }
             break;
         }
         case 2: {
             double amount;
-            std::cout << "Enter withdrawal amount: ";
-            std::cin >> amount;
+            cout << "Enter amount to withdraw: ";
+            cin >> amount;
             try {
                 account.withdraw(amount);
-                std::cout << "Withdrawal successful. New balance: " << account.getBalance() << "\n";
+                cout << "Withdrew $" << amount << " successfully." << endl;
             }
             catch (const std::exception& e) {
-                std::cerr << "Error: " << e.what() << "\n";
+                cerr << "Error: " << e.what() << endl;
             }
             break;
         }
         case 3:
-            std::cout << "Current balance: " << account.getBalance() << "\n";
+            cout << "Current Balance: $" << account.getBalance() << endl;
             break;
-        case 4:
-            std::cout << "Exiting and saving data...\n";
+        case 4: {
+            string filename;
+            cout << "Enter filename to save data: ";
+            cin >> filename;
+            try {
+                account.saveData(filename);
+                cout << "Account data saved to " << filename << endl;
+            }
+            catch (const std::exception& e) {
+                cerr << "Error saving data: " << e.what() << endl;
+            }
+            break;
+        }
+        case 5: {
+            string filename;
+            cout << "Enter filename to load data: ";
+            cin >> filename;
+            try {
+                account.loadData(filename);
+                cout << "Account data loaded successfully." << endl;
+                cout << "Account Number: " << account.getAccountNumber() << endl;
+                cout << "Balance: $" << account.getBalance() << endl;
+            }
+            catch (const std::exception& e) {
+                cerr << "Error loading data: " << e.what() << endl;
+            }
+            break;
+        }
+        case 6:
+            running = false;
+            cout << "Exiting the Bank System. Goodbye!" << endl;
             break;
         default:
-            std::cout << "Invalid choice. Please try again.\n";
+            cout << "Invalid choice. Please try again." << endl;
         }
-    } while (choice != 4);
-
-    // Збереження даних рахунку у файл при виході
-    std::ofstream outFile("account_data.txt");
-    if (outFile.is_open()) {
-        account.saveData(outFile);
-        outFile.close();
-        std::cout << "Account data saved successfully.\n";
-    }
-    else {
-        std::cerr << "Error: Unable to open file for saving.\n";
-    }
-
-	return 0;
-}
+    }*/
