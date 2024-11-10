@@ -21,8 +21,8 @@ namespace BankSystem
         double getBalance();
         string getAccountNumber();
 
-        virtual void loadData(ifstream file);
-        virtual void saveData(ofstream file);
+        virtual void loadData(string filename);
+        virtual void saveData(string filename);
     };
 }
 
