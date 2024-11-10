@@ -22,6 +22,9 @@
     <Filter Include="libs">
       <UniqueIdentifier>{b6571e77-5409-42de-a7cf-2037244203af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\domain">
+      <UniqueIdentifier>{61cf1ede-6aa2-4ca2-b9ac-254cd4b3dd73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\error\error.cpp">
@@ -42,6 +45,15 @@
     </ClCompile>
     <ClCompile Include="core\services\transaction_service.cpp">
       <Filter>core\services</Filter>
+    </ClCompile>
+    <ClCompile Include="core\domain\account.cpp">
+      <Filter>core\domain</Filter>
+    </ClCompile>
+    <ClCompile Include="core\domain\transaction.cpp">
+      <Filter>core\domain</Filter>
+    </ClCompile>
+    <ClCompile Include="core\domain\user.cpp">
+      <Filter>core\domain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +86,19 @@
     </ClInclude>
     <ClInclude Include="libs\libs.h">
       <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="project_service.h" />
+    <ClInclude Include="core\core.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\domain\account.h">
+      <Filter>core\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="core\domain\transaction.h">
+      <Filter>core\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="core\domain\user.h">
+      <Filter>core\domain</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
