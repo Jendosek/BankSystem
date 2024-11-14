@@ -5,6 +5,7 @@ using namespace BankSystem;
 int main()
 {
 
+
     
 
     return 0;
@@ -12,96 +13,99 @@ int main()
 }
 
 // “≈—“ Õ¿ ¿ ¿”Õ“
-/*string accountNumber;
-    double initialBalance;
+    //User user;
 
-    cout << "Welcome to the Bank System" << endl;
+    //cout << "Welcome to the Bank System" << endl;
 
-    cout << "Enter account number: ";
-    cin >> accountNumber;
+    //bool running = true;
+    //while (running) {
+    //    cout << "\nMenu:" << endl;
+    //    cout << "1. Register a new user" << endl;
+    //    cout << "2. Add a new account" << endl;
+    //    cout << "3. Show all accounts" << endl;
+    //    cout << "4. Save user data to file" << endl;
+    //    cout << "5. Load user data from file" << endl;
+    //    cout << "6. Find an account by number" << endl;
+    //    cout << "7. Exit" << endl;
+    //    cout << "Choose an option: ";
 
-    cout << "Enter initial balance: ";
-    cin >> initialBalance;
+    //    int choice;
+    //    cin >> choice;
 
-    Account account(accountNumber, initialBalance);
+    //    try {
+    //        switch (choice) {
+    //        case 1: {
+    //            string userName, userID;
+    //            cout << "Enter your name: ";
+    //            cin >> userName;
+    //            cout << "Enter your user ID: ";
+    //            cin >> userID;
+    //            user = User(userName, userID);
+    //            cout << "User registered successfully." << endl;
+    //            break;
+    //        }
+    //        case 2: {
+    //            string accountNumber;
+    //            double initialBalance;
 
-    bool running = true;
-    while (running) {
-        cout << "\nChoose an action:" << endl;
-        cout << "1. Deposit" << endl;
-        cout << "2. Withdraw" << endl;
-        cout << "3. Show Balance" << endl;
-        cout << "4. Save Account Data" << endl;
-        cout << "5. Load Account Data" << endl;
-        cout << "6. Exit" << endl;
-        cout << "Your choice: ";
+    //            cout << "Enter account number: ";
+    //            cin >> accountNumber;
+    //            cout << "Enter initial balance: ";
+    //            cin >> initialBalance;
 
-        int choice;
-        cin >> choice;
+    //            Account newAccount(accountNumber, initialBalance);
+    //            user.addAccount(newAccount);
 
-        switch (choice) {
-        case 1: {
-            double amount;
-            cout << "Enter amount to deposit: ";
-            cin >> amount;
-            try {
-                account.deposit(amount);
-                cout << "Deposited $" << amount << " successfully." << endl;
-            }
-            catch (const std::exception& e) {
-                cerr << "Error: " << e.what() << endl;
-            }
-            break;
-        }
-        case 2: {
-            double amount;
-            cout << "Enter amount to withdraw: ";
-            cin >> amount;
-            try {
-                account.withdraw(amount);
-                cout << "Withdrew $" << amount << " successfully." << endl;
-            }
-            catch (const std::exception& e) {
-                cerr << "Error: " << e.what() << endl;
-            }
-            break;
-        }
-        case 3:
-            cout << "Current Balance: $" << account.getBalance() << endl;
-            break;
-        case 4: {
-            string filename;
-            cout << "Enter filename to save data: ";
-            cin >> filename;
-            try {
-                account.saveData(filename);
-                cout << "Account data saved to " << filename << endl;
-            }
-            catch (const std::exception& e) {
-                cerr << "Error saving data: " << e.what() << endl;
-            }
-            break;
-        }
-        case 5: {
-            string filename;
-            cout << "Enter filename to load data: ";
-            cin >> filename;
-            try {
-                account.loadData(filename);
-                cout << "Account data loaded successfully." << endl;
-                cout << "Account Number: " << account.getAccountNumber() << endl;
-                cout << "Balance: $" << account.getBalance() << endl;
-            }
-            catch (const std::exception& e) {
-                cerr << "Error loading data: " << e.what() << endl;
-            }
-            break;
-        }
-        case 6:
-            running = false;
-            cout << "Exiting the Bank System. Goodbye!" << endl;
-            break;
-        default:
-            cout << "Invalid choice. Please try again." << endl;
-        }
-    }*/
+    //            cout << "Account created successfully." << endl;
+    //            break;
+    //        }
+    //        case 3: {
+    //            user.showAccounts();
+    //            break;
+    //        }
+    //        case 4: {
+    //            string filename;
+    //            cout << "Enter filename to save user data: ";
+    //            cin >> filename;
+    //            user.saveData(filename);
+    //            cout << "User data saved to " << filename << " successfully." << endl;
+    //            break;
+    //        }
+    //        case 5: {
+    //            string filename;
+    //            cout << "Enter filename to load user data: ";
+    //            cin >> filename;
+    //            user.loadData(filename);
+    //            cout << "User data loaded from " << filename << " successfully." << endl;
+    //            break;
+    //        }
+    //        case 6: {
+    //            string accountNumber;
+    //            cout << "Enter account number to search: ";
+    //            cin >> accountNumber;
+
+    //            Account* account = user.findAccount(accountNumber);
+    //            if (!account) {
+    //                throw BankException("Account not found!");
+    //            }
+
+    //            cout << "Account found! Balance: $" << account->getBalance() << endl;
+    //            break;
+    //        }
+    //        case 7: {
+    //            cout << "Exiting the program. Goodbye!" << endl;
+    //            running = false;
+    //            break;
+    //        }
+    //        default: {
+    //            throw BankException("Invalid menu choice!");
+    //        }
+    //        }
+    //    }
+    //    catch (const BankException& e) {
+    //        cerr << "Bank error: " << e.what() << endl;
+    //    }
+    //    catch (const std::exception& e) {
+    //        cerr << "Standard error: " << e.what() << endl;
+    //    }
+    //}
