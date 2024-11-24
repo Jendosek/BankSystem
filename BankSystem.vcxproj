@@ -32,7 +32,7 @@
     <ClInclude Include="core\domain\user.h" />
     <ClInclude Include="core\error\error.h" />
     <ClInclude Include="core\interfaces\i_account_service.h" />
-    <ClInclude Include="core\interfaces\i_repository.h" />
+    <ClInclude Include="core\interfaces\i_user_service.h" />
     <ClInclude Include="core\interfaces\i_transaction_service.h" />
     <ClInclude Include="libs\libs.h" />
     <ClInclude Include="project_service.h" />
