@@ -12,13 +12,13 @@ namespace BankSystem
 
     void Account::deposit(double amount) 
     {
-        if (amount < 0) throw invalid_argument("Amount must be positive.");
+        if (amount < 0) throw invalid_argument("Сума має бути позитивною.");
         balance += amount;
     }
 
     void Account::withdraw(double amount) 
     {
-        if (amount > balance) throw runtime_error("Insufficient funds.");
+        if (amount > balance) throw runtime_error("Недостатньо коштів.");
         balance -= amount;
     }
 
@@ -36,7 +36,7 @@ namespace BankSystem
     {
         ifstream inFile(filename);
         if (!inFile) {
-            throw runtime_error("Unable to open file for loading.");
+            throw runtime_error("Не вдається відкрити файл для завантаження.");
         }
 
         if (!getline(inFile, accountNumber)) {
@@ -44,13 +44,13 @@ namespace BankSystem
         }
 
         if (!(inFile >> balance)) {
-            throw runtime_error("Error reading balance from file.");
+            throw runtime_error("Помилка читання номера рахунку з файлу.");
         }
 
         inFile.close();
 
         if (accountNumber.empty()) {
-            throw runtime_error("Account number loaded from file is empty.");
+            throw runtime_error("Номер рахунку, завантажений із файлу, порожній.");
         }
     }
 
@@ -58,13 +58,13 @@ namespace BankSystem
     {
         ofstream outFile(filename);
         if (!outFile) {
-            throw runtime_error("Unable to open file for saving.");
+            throw runtime_error("Неможливо відкрити файл для збереження.");
         }
 
         outFile << accountNumber << "\n" << balance << "\n";
 
         if (!outFile.good()) {
-            throw runtime_error("Error occurred while writing to file.");
+            throw runtime_error("Під час запису у файл сталася помилка.");
         }
 
         outFile.close();

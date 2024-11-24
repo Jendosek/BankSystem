@@ -9,12 +9,12 @@ public:
     virtual ~IUserService() = default;
 
     virtual void registerUser(BankSystem::User user) = 0;
-    virtual void removeUser(std::string userID) = 0;
-    virtual BankSystem::User* findUser(std::string userID) = 0;
-    virtual std::vector<BankSystem::User> getAllUsers() = 0; // This should now work
-    virtual void saveAllUsers(std::string filename) = 0;
-    virtual void loadAllUsers(std::string filename) = 0;
+    virtual void removeUser(string userID) = 0;
+    virtual BankSystem::User* findUser(string userID) = 0;
+    virtual vector<BankSystem::User> getAllUsers() = 0;
+    virtual void saveAllUsers(string filename) = 0;
+    virtual void loadAllUsers(string filename) = 0;
 };
 
-#endif // !I_USER
+#endif 
 

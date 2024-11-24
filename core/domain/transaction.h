@@ -3,48 +3,40 @@
 
 #include "../../libs/libs.h"
 
-namespace BankSystem {
+namespace BankSystem 
+{
 
-    class Transaction {
+    class Transaction 
+    {
     private:
-        std::string transactionID;
-        std::string date;         // Дата транзакції
-        double amount;            // Сума транзакції
-        std::string fromAccount;  // Номер акаунту-джерела
-        std::string toAccount;    // Номер акаунту-отримувача (може бути пустим для депозиту/зняття)
+        string transactionID;
+        string date;
+        double amount;
+        string fromAccount; 
+        string toAccount;
 
-        // Генерує унікальний ідентифікатор транзакції
-        std::string generateTransactionID();
+        string generateTransactionID();
 
-        // Форматує поточну дату як рядок
-        std::string getCurrentDate();
+        string getCurrentDate();
 
     public:
-        // Конструктор для створення транзакції
-        Transaction(const std::string& fromAcc, const std::string& toAcc, double amt);
+        Transaction(const string& fromAcc, const string& toAcc, double amt);
 
-        // Повертає суму транзакції
         double getAmount() const;
 
-        // Повертає номер акаунту-джерела
-        std::string getFromAccount() const;
+        string getFromAccount() const;
 
-        // Повертає номер акаунту-отримувача
-        std::string getToAccount() const;
+        string getToAccount() const;
 
-        // Повертає ідентифікатор транзакції
-        std::string getTransactionID() const;
+        string getTransactionID() const;
 
-        // Повертає дату транзакції
-        std::string getDate() const;
+        string getDate() const;
 
-        // Зберігає транзакцію у файл
-        void saveTransaction(const std::string& filename) const;
+        void saveTransaction(const string& filename) const;
 
-        // Завантажує транзакції з файлу
-        static std::vector<Transaction> loadTransactions(const std::string& filename);
+        static vector<Transaction> loadTransactions(const string& filename);
     };
 }
 
-#endif // !TRANSACTION
+#endif
 

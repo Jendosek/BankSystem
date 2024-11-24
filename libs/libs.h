@@ -7,6 +7,7 @@
 #include <vector>
 #include <ctime>
 #include <stdexcept>
+#include <windows.h>
 
 using namespace std;
 
