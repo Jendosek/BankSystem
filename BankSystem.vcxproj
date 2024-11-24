@@ -23,11 +23,6 @@
     <ClCompile Include="core\domain\transaction.cpp" />
     <ClCompile Include="core\domain\user.cpp" />
     <ClCompile Include="core\error\error.cpp" />
-    <ClCompile Include="core\logger\logger.cpp" />
-    <ClCompile Include="core\repository\account_repository.cpp" />
-    <ClCompile Include="core\repository\user_repository.cpp" />
-    <ClCompile Include="core\services\account_service.cpp" />
-    <ClCompile Include="core\services\transaction_service.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -39,11 +34,6 @@
     <ClInclude Include="core\interfaces\i_account_service.h" />
     <ClInclude Include="core\interfaces\i_repository.h" />
     <ClInclude Include="core\interfaces\i_transaction_service.h" />
-    <ClInclude Include="core\logger\logger.h" />
-    <ClInclude Include="core\repository\account_repository.h" />
-    <ClInclude Include="core\repository\user_repository.h" />
-    <ClInclude Include="core\services\account_service.h" />
-    <ClInclude Include="core\services\transaction_service.h" />
     <ClInclude Include="libs\libs.h" />
     <ClInclude Include="project_service.h" />
   </ItemGroup>
