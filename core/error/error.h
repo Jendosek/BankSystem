@@ -5,19 +5,15 @@
 
 namespace BankSystem {
 
-    // Клас для обробки помилок у банківській системі
-    class BankException : public std::exception {
+    class BankException : public exception {
     private:
-        std::string message;
+        string message;
 
     public:
-        // Конструктор для ініціалізації повідомлення про помилку
-        explicit BankException(const std::string& msg);
+        explicit BankException(const string& msg);
 
-        // Метод для отримання повідомлення про помилку
         const char* what() const noexcept override;
     };
 }
-
 
 #endif 
