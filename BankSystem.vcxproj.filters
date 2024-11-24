@@ -7,15 +7,6 @@
     <Filter Include="core\error">
       <UniqueIdentifier>{549fb32f-3168-40d6-a42e-4bb49ab17d8e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\logger">
-      <UniqueIdentifier>{738bf167-7f70-4c98-9cc9-4a941b5e5724}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\services">
-      <UniqueIdentifier>{83f2c920-f2d2-471b-bebe-de26351bbdd5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\repository">
-      <UniqueIdentifier>{60023084-9379-430c-b14c-dc57f088aa51}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\interfaces">
       <UniqueIdentifier>{1ec965dc-47d2-4006-a3db-3b88d3fbcf1c}</UniqueIdentifier>
     </Filter>
@@ -30,22 +21,7 @@
     <ClCompile Include="core\error\error.cpp">
       <Filter>core\error</Filter>
     </ClCompile>
-    <ClCompile Include="core\logger\logger.cpp">
-      <Filter>core\logger</Filter>
-    </ClCompile>
-    <ClCompile Include="core\repository\account_repository.cpp">
-      <Filter>core\repository</Filter>
-    </ClCompile>
-    <ClCompile Include="core\repository\user_repository.cpp">
-      <Filter>core\repository</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="core\services\account_service.cpp">
-      <Filter>core\services</Filter>
-    </ClCompile>
-    <ClCompile Include="core\services\transaction_service.cpp">
-      <Filter>core\services</Filter>
-    </ClCompile>
     <ClCompile Include="core\domain\account.cpp">
       <Filter>core\domain</Filter>
     </ClCompile>
@@ -68,21 +44,6 @@
     </ClInclude>
     <ClInclude Include="core\interfaces\i_transaction_service.h">
       <Filter>core\interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="core\logger\logger.h">
-      <Filter>core\logger</Filter>
-    </ClInclude>
-    <ClInclude Include="core\repository\account_repository.h">
-      <Filter>core\repository</Filter>
-    </ClInclude>
-    <ClInclude Include="core\repository\user_repository.h">
-      <Filter>core\repository</Filter>
-    </ClInclude>
-    <ClInclude Include="core\services\account_service.h">
-      <Filter>core\services</Filter>
-    </ClInclude>
-    <ClInclude Include="core\services\transaction_service.h">
-      <Filter>core\services</Filter>
     </ClInclude>
     <ClInclude Include="libs\libs.h">
       <Filter>libs</Filter>
