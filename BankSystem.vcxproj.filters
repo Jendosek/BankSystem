@@ -39,9 +39,6 @@
     <ClInclude Include="core\interfaces\i_account_service.h">
       <Filter>core\interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="core\interfaces\i_repository.h">
-      <Filter>core\interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="core\interfaces\i_transaction_service.h">
       <Filter>core\interfaces</Filter>
     </ClInclude>
@@ -60,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="core\domain\user.h">
       <Filter>core\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="core\interfaces\i_user_service.h">
+      <Filter>core\interfaces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
