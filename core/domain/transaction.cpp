@@ -112,4 +112,28 @@ namespace BankSystem
         inFile.close();
         return transactions;
     }
+
+    void Transaction::display() const {
+        std::cout << "Transaction ID: " << transactionID << "\n"
+            << "Date: " << date << "\n"
+            << "From Account: " << fromAccount << "\n"
+            << "To Account: " << toAccount << "\n"
+            << "Amount: " << amount << "\n";
+    }
+
+    void Transaction::saveTransactions(const vector<Transaction>& transactions, const string& filename) {
+        ofstream outFile(filename);
+        if (outFile.is_open()) {
+            for (const auto& transaction : transactions) {
+                outFile << transaction.getTransactionID() << ","
+                        << transaction.getDate() << ","
+                        << transaction.getFromAccount() << ","
+                        << transaction.getToAccount() << ","
+                        << transaction.getAmount() << endl;
+            }
+            outFile.close();
+        } else {
+            throw runtime_error("Unable to open file for writing");
+        }
+    }
 }

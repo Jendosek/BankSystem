@@ -6,13 +6,13 @@
 namespace BankSystem 
 {
 
-    class Transaction 
+    class Transaction
     {
     private:
         string transactionID;
         string date;
         double amount;
-        string fromAccount; 
+        string fromAccount;
         string toAccount;
 
         string generateTransactionID();
@@ -35,6 +35,11 @@ namespace BankSystem
         void saveTransaction(const string& filename) const;
 
         static vector<Transaction> loadTransactions(const string& filename);
+
+        void display() const;
+
+        static void saveTransactions(const vector<Transaction>& transactions, const string& filename);
+
     };
 }
 

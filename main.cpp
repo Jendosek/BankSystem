@@ -2,161 +2,225 @@
 
 using namespace BankSystem;
 
+void clearConsole() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
     string userName, userID;
-
-    cout << "Welcome to the Bank System" << endl;
-
-    // Запитуємо у користувача ім'я та ID
-    cout << "Enter your name: ";
+    cout << "Ласкаво просимо до банківської системи!" << endl;
+    cout << "Введіть ваше ім'я: ";
     cin >> userName;
-
-    cout << "Enter your user ID: ";
+    cout << "Введіть ваш ID користувача: ";
     cin >> userID;
 
-
-
-    User user(userName, userID); // Створюємо користувача
+    User user(userName, userID);
+    vector<Transaction> transactions;
 
     bool running = true;
 
     while (running) {
-        cout << "\nChoose an action:" << endl;
-        cout << "1. Create Account" << endl;
-        cout << "2. Remove Account" << endl;
-        cout << "3. Show All Accounts" << endl;
-        cout << "4. Deposit to Account" << endl;
-        cout << "5. Withdraw from Account" << endl;
-        cout << "6. Save User Data" << endl;
-        cout << "7. Load User Data" << endl;
-        cout << "8. Exit" << endl;
-        cout << "Your choice: ";
+        clearConsole();
+        cout << "---------------------------" << endl;
+        cout << "       БАНКІВСЬКА СИСТЕМА       " << endl;
+        cout << "---------------------------" << endl;
+        cout << "1. Додати акаунт" << endl;
+        cout << "2. Видалити акаунт" << endl;
+        cout << "3. Показати всі акаунти" << endl;
+        cout << "4. Поповнити акаунт" << endl;
+        cout << "5. Зняти кошти з акаунта" << endl;
+        cout << "6. Переглянути баланс акаунта" << endl;
+        cout << "7. Виконати транзакцію" << endl;
+        cout << "8. Показати історію транзакцій" << endl;
+        cout << "9. Зберегти історію транзакцій" << endl;
+        cout << "10. Завантажити історію транзакцій" << endl;
+        cout << "11. Вийти" << endl;
+        cout << "---------------------------" << endl;
+        cout << "Оберіть дію: ";
 
         int choice;
         cin >> choice;
 
         switch (choice) {
         case 1: {
-            // Додаємо новий акаунт
+            clearConsole();
+            cout << "Додавання нового акаунта\n";
             string accountNumber;
             double initialBalance;
-
-            cout << "Enter new account number: ";
+            cout << "Введіть номер акаунта: ";
             cin >> accountNumber;
-            cout << "Enter initial balance: ";
+            cout << "Введіть початковий баланс: ";
             cin >> initialBalance;
 
             Account newAccount(accountNumber, initialBalance);
             user.addAccount(newAccount);
-
-            cout << "Account created successfully." << endl;
+            cout << "Акаунт успішно додано.\n";
             break;
         }
         case 2: {
-            // Видаляємо акаунт
+            clearConsole();
+            cout << "Видалення акаунта\n";
             string accountNumber;
-            cout << "Enter account number to remove: ";
+            cout << "Введіть номер акаунта для видалення: ";
             cin >> accountNumber;
 
             user.removeAccount(accountNumber);
-            cout << "Account removed (if it existed)." << endl;
+            cout << "Акаунт видалено (якщо він існував).\n";
             break;
         }
-        case 3:
-            // Показуємо всі акаунти користувача
+        case 3: {
+            clearConsole();
+            cout << "Список усіх акаунтів\n";
             user.showAccounts();
             break;
+        }
         case 4: {
-            // Внесення коштів на певний акаунт
+            clearConsole();
+            cout << "Поповнення акаунта\n";
             string accountNumber;
             double amount;
-
-            cout << "Enter account number: ";
+            cout << "Введіть номер акаунта: ";
             cin >> accountNumber;
-            cout << "Enter amount to deposit: ";
+            cout << "Введіть суму для поповнення: ";
             cin >> amount;
 
             Account* account = user.findAccount(accountNumber);
             if (account) {
-                try {
-                    account->deposit(amount);
-                    cout << "Deposited $" << amount << " successfully." << endl;
-                }
-                catch (const std::exception& e) {
-                    cerr << "Error: " << e.what() << endl;
-                }
+                account->deposit(amount);
+                cout << "Поповнення успішно виконано.\n";
             }
             else {
-                cout << "Account not found." << endl;
+                cout << "Акаунт не знайдено.\n";
             }
             break;
         }
         case 5: {
-            // Зняття коштів з певного акаунту
+            clearConsole();
+            cout << "Зняття коштів з акаунта\n";
             string accountNumber;
             double amount;
-
-            cout << "Enter account number: ";
+            cout << "Введіть номер акаунта: ";
             cin >> accountNumber;
-            cout << "Enter amount to withdraw: ";
+            cout << "Введіть суму для зняття: ";
             cin >> amount;
 
             Account* account = user.findAccount(accountNumber);
             if (account) {
                 try {
                     account->withdraw(amount);
-                    cout << "Withdrew $" << amount << " successfully." << endl;
+                    cout << "Зняття коштів виконано успішно.\n";
                 }
-                catch (const std::exception& e) {
-                    cerr << "Error: " << e.what() << endl;
+                catch (const exception& e) {
+                    cout << "Помилка: " << e.what() << endl;
                 }
             }
             else {
-                cout << "Account not found." << endl;
+                cout << "Акаунт не знайдено.\n";
             }
             break;
         }
         case 6: {
-            // Зберігаємо дані користувача у файл
-            string filename;
-            cout << "Enter filename to save user data: ";
-            cin >> filename;
+            clearConsole();
+            cout << "Перегляд балансу акаунта\n";
+            string accountNumber;
+            cout << "Введіть номер акаунта: ";
+            cin >> accountNumber;
 
-            try {
-                user.saveData(filename);
-                cout << "User data saved to " << filename << endl;
+            Account* account = user.findAccount(accountNumber);
+            if (account) {
+                cout << "Баланс акаунта " << accountNumber << ": " << account->getBalance() << endl;
             }
-            catch (const std::exception& e) {
-                cerr << "Error saving data: " << e.what() << endl;
+            else {
+                cout << "Акаунт не знайдено.\n";
             }
             break;
         }
         case 7: {
-            // Завантажуємо дані користувача з файлу
-            string filename;
-            cout << "Enter filename to load user data: ";
-            cin >> filename;
+            clearConsole();
+            cout << "Виконання транзакції між акаунтами\n";
+            string fromAccountNumber, toAccountNumber;
+            double amount;
+            cout << "Введіть номер акаунта, з якого буде знято кошти: ";
+            cin >> fromAccountNumber;
+            cout << "Введіть номер акаунта, на який буде зараховано кошти: ";
+            cin >> toAccountNumber;
+            cout << "Введіть суму транзакції: ";
+            cin >> amount;
 
-            try {
-                user.loadData(filename);
-                cout << "User data loaded successfully." << endl;
+            Account* fromAccount = user.findAccount(fromAccountNumber);
+            Account* toAccount = user.findAccount(toAccountNumber);
+
+            if (fromAccount && toAccount) {
+                try {
+                    fromAccount->withdraw(amount);
+                    toAccount->deposit(amount);
+                    Transaction transaction(fromAccountNumber, toAccountNumber, amount);
+                    transactions.push_back(transaction);
+                    cout << "Транзакція успішно виконана.\n";
+                }
+                catch (const exception& e) {
+                    cout << "Помилка під час транзакції: " << e.what() << endl;
+                }
             }
-            catch (const std::exception& e) {
-                cerr << "Error loading data: " << e.what() << endl;
+            else {
+                cout << "Один із акаунтів не знайдено.\n";
             }
             break;
         }
-        case 8:
-            // Вихід з програми
-            running = false;
-            cout << "Exiting the Bank System. Goodbye!" << endl;
+        case 8: {
+            clearConsole();
+            cout << "Історія транзакцій\n";
+            for (const auto& transaction : transactions) {
+                transaction.display();
+            }
             break;
-        default:
-            cout << "Invalid choice. Please try again." << endl;
+        }
+        case 9: {
+            clearConsole();
+            cout << "Збереження історії транзакцій\n";
+            string filename;
+            cout << "Введіть ім'я файлу для збереження історії: ";
+            cin >> filename;
+
+            Transaction::saveTransactions(transactions, filename);
+            cout << "Історія транзакцій збережена в " << filename << ".\n";
+            break;
+        }
+        case 10: {
+            clearConsole();
+            cout << "Завантаження історії транзакцій\n";
+            string filename;
+            cout << "Введіть ім'я файлу для завантаження історії: ";
+            cin >> filename;
+
+            transactions = Transaction::loadTransactions(filename);
+            cout << "Історія транзакцій успішно завантажена.\n";
+            break;
+        }
+        case 11: {
+            clearConsole();
+            cout << "Вихід із системи. До побачення!\n";
+            running = false;
+            break;
+        }
+        default: {
+            clearConsole();
+            cout << "Неправильний вибір. Спробуйте ще раз.\n";
+            break;
+        }
+        }
+        if (running) {
+            cout << "\nНатисніть Enter для продовження...";
+            cin.ignore();
+            cin.get();
         }
     }
 
